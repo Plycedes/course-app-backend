@@ -1,0 +1,163 @@
+const getRandomStudents = () => {
+    const students = [
+        { id: 101, name: "Monkey D. Luffy", email: "luffy@eastblue.com" },
+        { id: 102, name: "Roronoa Zoro", email: "zoro@eastblue.com" },
+        { id: 103, name: "Vinsmoke Sanji", email: "sanji@northblue.com" },
+    ];
+
+    const numStudents = Math.floor(Math.random() * 3) + 1;
+    return students.slice(0, numStudents);
+};
+
+const generateSyllabus = (topics) => {
+    return topics.map((topic, index) => ({
+        week: index + 1,
+        topic,
+        content: `In-depth discussion on ${topic}. Practical examples and exercises included.`,
+    }));
+};
+
+module.exports = [
+    {
+        id: 1,
+        name: "Redis Complete Course",
+        instructor: "Eren Yeager",
+        description: "Everything Redis related in one place",
+        enrollmentStatus: "Open",
+        thumbnail:
+            "https://res.cloudinary.com/dxsffcg6l/image/upload/v1739083755/redis-cover_bsr6ib.jpg",
+        duration: "6 weeks",
+        schedule: "Mondays & Wednesdays, 7:00 PM - 9:00 PM",
+        location: "Online",
+        prerequisites: ["Basic JavaScript"],
+        syllabus: generateSyllabus([
+            "Introduction to Redis",
+            "Data Structures in Redis",
+            "Persistence and Snapshots",
+            "Redis Cluster and Replication",
+            "Redis for Caching",
+            "Advanced Redis Techniques",
+        ]),
+        students: getRandomStudents(),
+        likes: 12,
+        likedBy: [],
+    },
+    {
+        id: 2,
+        name: "Docker",
+        instructor: "Erwin Smith",
+        description: "Master containerization with Docker",
+        enrollmentStatus: "Open",
+        thumbnail: "https://miro.medium.com/v2/resize:fit:1200/1*37qDVEfcM-fbQ3psFL-4-A.png",
+        duration: "8 weeks",
+        schedule: "Tuesdays & Thursdays, 6:00 PM - 8:00 PM",
+        location: "Online",
+        prerequisites: ["Linux Basics"],
+        syllabus: generateSyllabus([
+            "Docker Fundamentals",
+            "Working with Images & Containers",
+            "Networking in Docker",
+            "Volumes & Persistent Storage",
+            "Docker Compose",
+            "CI/CD with Docker",
+        ]),
+        students: getRandomStudents(),
+        likes: 8,
+        likedBy: [],
+    },
+    {
+        id: 3,
+        name: "Solidity Beginner's Course",
+        instructor: "Naruto Uzumaki",
+        description: "Learn Solidity for smart contract development",
+        enrollmentStatus: "Closed",
+        thumbnail: "https://miro.medium.com/v2/resize:fit:1000/0*M8BCHiLneEKYybv-.jpg",
+        duration: "10 weeks",
+        schedule: "Fridays & Saturdays, 4:00 PM - 6:00 PM",
+        location: "Online",
+        prerequisites: ["JavaScript", "Blockchain Basics"],
+        syllabus: generateSyllabus([
+            "Solidity Basics",
+            "Smart Contracts & Functions",
+            "Gas Optimization",
+            "Security Best Practices",
+            "ERC-20 & ERC-721 Tokens",
+            "Deploying Smart Contracts",
+        ]),
+        students: getRandomStudents(),
+        likes: 15,
+        likedBy: [],
+    },
+    {
+        id: 4,
+        name: "Artificial Intelligence",
+        instructor: "Tony Stark",
+        description: "Explore the world of AI and Machine Learning",
+        enrollmentStatus: "Open",
+        thumbnail:
+            "https://www.polytechnique-insights.com/wp-content/uploads/2024/01/ia-ih-foncee-1049x600.jpg",
+        duration: "12 weeks",
+        schedule: "Mondays & Wednesdays, 5:00 PM - 7:00 PM",
+        location: "Online",
+        prerequisites: ["Python", "Mathematics"],
+        syllabus: generateSyllabus([
+            "Introduction to AI",
+            "Machine Learning Basics",
+            "Deep Learning with Neural Networks",
+            "Natural Language Processing",
+            "AI Ethics & Bias",
+            "Real-World AI Applications",
+        ]),
+        students: getRandomStudents(),
+        likes: 20,
+        likedBy: [],
+    },
+    {
+        id: 5,
+        name: "Node.js Full Course",
+        instructor: "Eichiro Oda",
+        description: "Comprehensive guide to backend development with Node.js",
+        enrollmentStatus: "Open",
+        thumbnail:
+            "https://bs-uploads.toptal.io/blackfish-uploads/components/open_graph_image/8960807/og_image/optimized/secure-rest-api-in-nodejs-18f43b3033c239da5d2525cfd9fdc98f.png",
+        duration: "10 weeks",
+        schedule: "Tuesdays & Thursdays, 6:00 PM - 8:00 PM",
+        location: "Online",
+        prerequisites: ["JavaScript", "Basic API Development"],
+        syllabus: generateSyllabus([
+            "Introduction to Node.js",
+            "Express.js Fundamentals",
+            "Database Integration (MongoDB & SQL)",
+            "Authentication & Security",
+            "Building RESTful APIs",
+            "Scalability & Performance Optimization",
+        ]),
+        students: getRandomStudents(),
+        likes: 18,
+        likedBy: [],
+    },
+    {
+        id: 6,
+        name: "Advanced Redux",
+        instructor: "Jane Smith",
+        description: "Deep dive into Redux for large-scale applications",
+        enrollmentStatus: "Closed",
+        thumbnail:
+            "https://i1.wp.com/blog.enriqueoriol.com/wp-content/uploads/2018/08/reduxLogo.png?fit=1024%2C684",
+        duration: "8 weeks",
+        schedule: "Tuesdays & Thursdays, 6:00 PM - 8:00 PM",
+        location: "Online",
+        prerequisites: ["React Basics", "Redux Fundamentals"],
+        syllabus: generateSyllabus([
+            "Redux Advanced Patterns",
+            "Middleware (Redux Thunk & Saga)",
+            "State Management Best Practices",
+            "Optimizing Performance in Redux",
+            "Redux Toolkit & API Integration",
+            "Handling Side Effects with Redux",
+        ]),
+        students: getRandomStudents(),
+        likes: 22,
+        likedBy: [],
+    },
+];
